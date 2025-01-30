@@ -28,7 +28,7 @@ def extract_text_from_pdf(pdf_path):
         if text.strip():
             return text.strip()
     except Exception as e:
-        print(f"Direct text extraction failed: {e}")
+        st.error(f"Direct text extraction failed: {e}")
 
     # Fallback to OCR for image-based PDFs
     print("Falling back to OCR for image-based PDF.")
