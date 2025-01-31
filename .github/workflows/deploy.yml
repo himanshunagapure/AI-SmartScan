@@ -1,0 +1,27 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Authenticate to AWS
+        run: |
+          echo "${{ secrets.AWS_ACCESS_KEY_ID }}" | docker login -u AWS --password-stdin 061051258974.dkr.ecr.ap-south-1.amazonaws.com
+
+      - name: Build & Push Docker Image
+        run: |
+          docker build -t ai-smartscan .
+          docker tag ai-smartscan:latest 061051258974.dkr.ecr.ap-south-1.amazonaws.com/ai-smartscan:latest
+          docker push 061051258974.dkr.ecr.ap-south-1.amazonaws.com/ai-smartscan:latest
+
+      - name: Deploy New Image to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no ec2-user@3.109.59.213 "docker pull 061051258974.dkr.ecr.ap-south-1.amazonaws.com/ai-smartscan:latest && docker stop ai-smartscan || true && docker run -d -p 80:8501 061051258974.dkr.ecr.ap-south-1.amazonaws.com/ai-smartscan:latest"
