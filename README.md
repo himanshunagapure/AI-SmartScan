@@ -1,6 +1,9 @@
 AI-Powered Resume Analyzer
 
-Try : https://ai-smartscan-resume.streamlit.app/
+Try : 
+https://ai-smartscan.onrender.com/
+or
+https://ai-smartscan-resume.streamlit.app/
 
 # AI-Powered Resume Analyzer
 
@@ -22,11 +25,12 @@ Whether you’re a job seeker or a recruiter, this tool simplifies resume assess
 ## 🔑 Features
 
 ### 1️⃣ General Resume Analysis
-- Summarizes the resume in one line.
+- Summarizes the resume and give overall assessment.
 - Highlights existing skill sets.
+- Provides a thorough evaluation of strengths and weaknesses.
+- Unique Selling Proposition (USP).
 - Identifies skill gaps and suggests improvements.
 - Recommends popular courses to enhance the resume.
-- Provides a thorough evaluation of strengths and weaknesses.
 
 ### 2️⃣ Resume Matching with Job Description
 - Analyzes resume compatibility with a specific job description.
