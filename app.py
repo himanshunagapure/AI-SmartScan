@@ -73,25 +73,54 @@ def analyze_resume(resume_text, job_description=None):
 # Streamlit app
 
 st.set_page_config(page_title="AI SmartScan", page_icon="📊", layout="wide")
+# Page title and description
+st.markdown("# Free ATS Resume Checker")
+st.markdown(
+    "Get hired faster with an ATS-friendly resume. Our free ATS Resume Checker scans resume in depth and delivers instant suggestions to improve your resume score — right from your desktop or mobile device."
+)
 
 # Custom CSS
 st.markdown(
     """
     <style>
-        .main {background-color: #f4f4f4; padding: 20px; border-radius: 10px;}
-        .stButton>button {background-color: #4CAF50; color: white; font-size: 16px; padding: 12px; border-radius: 8px; border: none; cursor: pointer; transition: 0.3s;}
-        .stButton>button:hover {background-color: #45a049;}
+        .stApp {background-color: #0c2340; color: white; padding: 20px; border-radius: 10px;}
+        .stButton>button {
+            background-color: #00b4d8;
+            color: white;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .title-text {
+                font-size: 40px;
+                font-weight: bold;
+            }
+        .subtitle-text {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        .stButton>button:hover {
+            background-color: #028090;
+        }
+        .upload-box {
+                border: 2px dashed white;
+                padding: 20px;
+                text-align: center;
+                border-radius: 10px;
+                background-color: #112b4e;
+            }
+        .st-emotion-cache-ue6h4q {color: white;}
         .stTextInput, .stTextArea {border-radius: 8px; border: 1px solid #ccc; padding: 12px; width: 100%; font-size: 14px;}
-        .stFileUploader {border: 2px dashed #aaa; padding: 20px; border-radius: 12px; text-align: center; background-color: #fff;}
-        .stFileUploader:hover {border-color: #4CAF50;}
+        .stFileUploader {border: 2px dashed white; padding: 20px; border-radius: 12px; text-align: center; background-color: #112b4e; color: white;}
+        .stFileUploader:hover {border-color: #128477;}
         .header {text-align: center; font-size: 28px; font-weight: bold; color: #333;}
     </style>
     """,
     unsafe_allow_html=True,
 )
-# Title
-st.markdown("<h1 class='header'> AI-Powered Resume Screening System</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center; font-size:18px;'>Analyze your resume and get feedback on how well it matches a job description.</p>", unsafe_allow_html=True)
 
 col1 , col2 = st.columns([1,1])
 with col1:
