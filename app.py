@@ -6,6 +6,7 @@ import google.generativeai as genai
 from pdf2image import convert_from_path
 import pytesseract
 import pdfplumber
+from PIL import Image
 
 # Load environment variables
 load_dotenv()
@@ -121,6 +122,29 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
+
+# Two-Column Layout
+col1, col2 = st.columns([1, 1])
+with col1:
+    # Why Use an ATS Resume Checker?
+    st.markdown("### 📌 Why Optimize Your Resume for ATS?")
+    st.write(
+        "Most companies use an Applicant Tracking System (ATS) to filter resumes before they reach human recruiters. If your resume isn't optimized, it might never get seen! Our AI-powered tool scans your resume and provides instant suggestions to improve its ATS compatibility."
+    )
+
+    # Why Choose AI SmartScan?
+    st.markdown("### 🔍 Why Use AI SmartScan?")
+    st.write(
+        "- **100% Free**: No hidden charges, unlimited scans!"
+        "\n- **AI-Powered Analysis**: Get real-time insights powered by cutting-edge AI."
+        "\n- **Instant Feedback**: No waiting—get results in seconds."
+        "\n- **Simple & User-Friendly**: Upload, scan, and improve your resume with ease."
+    )
+
+with col2:
+    # Displaying a GIF
+    gif_path = "assets/giphy.gif"  # Replace with actual GIF file
+    st.image(gif_path, use_container_width=True)
 
 col1 , col2 = st.columns([1,1])
 with col1:
