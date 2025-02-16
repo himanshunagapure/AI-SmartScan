@@ -84,6 +84,17 @@ st.markdown(
 st.markdown(
     """
     <style>
+    /* Change Navbar background color */
+        header[data-testid="stHeader"] {
+            background-color: #0c2340 !important; /* Dark Blue */
+            height: 50px;
+            padding: 10px;
+        }
+
+        /* Change navbar text color */
+        header[data-testid="stHeader"] * {
+            color: white !important;
+        }
         .stApp {background-color: #0c2340; color: white; padding: 20px; border-radius: 10px;}
         .stButton>button {
             background-color: #00b4d8;
