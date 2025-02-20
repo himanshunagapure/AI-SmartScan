@@ -1,8 +1,6 @@
 AI-Powered Resume Analyzer
 
 Try : 
-https://ai-smartscan.onrender.com/
-or
 https://ai-smartscan-resume.streamlit.app/
 
 # AI-Powered Resume Analyzer
